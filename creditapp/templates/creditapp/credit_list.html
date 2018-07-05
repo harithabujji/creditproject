@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+
+     <link href="css/bootstrap.min.css"rel="stylesheet"media="screen">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>college</title>
+    <script>
+</script>
+</head>
+<body>
+
+    <form>
+        <fieldset>
+
+      <center> <h3>Cards</h3></center>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button><a href="{% url 'creditapp:logout'%}">Log Out</a></button>
+            <br>
+            <br>
+            <div class="form-group">
+                <button><a href="{% url 'creditapp:add_card'%}">Add Card</a></button>
+            </div>
+
+            <br>
+            <br>
+
+    <table class="table">
+       <tr>
+  <th>friendly_name</th>
+    <th>card_on_name</th>
+    <th>expiry_date</th>
+    <th>typec</th>
+     <th>cvv</th>
+     <th>card_number</th>
+           <th>Action</th>
+        </tr>
+{% for i in jails %}
+<tr>
+  <td>{{i.friendly_name}}</td>
+    <td>{{i.name_on_card}}</td>
+    <td>{{i.expiry_date}}</td>
+    <td>{{i.typec}}</td>
+     <td>{{i.cvv}}</td>
+     <td>{{i.card_number}}</td>
+
+      <td>
+                <a href="{% url 'creditapp:edit_card' i.id %}">Edit</a> |
+                <a href="{% url 'creditapp:delete_card' i.id %}">Delete</a>
+            </td>
+
+</tr>
+        {% endfor %}
+    </table>
+             </fieldset>
+    </form>
+
+</body>
+</html>

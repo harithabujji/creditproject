@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="col-xs-6 col-xs-offset-3">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Add College</legend>
+                <div class="form-group">
+                    <label for="{{ form.friendly_name.id_for_label }}">Enter friendlyName</label>
+                    {{ form.friendly_name }}</div>
+                <div class="from-group">
+                    <label for="{{ form.name_on_card.id_for_label}}">Enter name</label>
+                    {{ form.name_on_card }}
+                </div>
+                <div class="from-group">
+                    <label for="{{ form.expiry_date.id_for_label}}">Enter date</label>
+                    {{ form.expiry_date}}
+                </div>
+                 <div class="from-group">
+                    <label for="{{ form.typec.id_for_label}}">Enter type</label>
+                    {{ form.typec}}
+                </div>
+
+                 <div class="from-group">
+                    <label for="{{ form.cvv.id_for_label}}">Enter cvv</label>
+                    {{ form.cvv}}
+                </div>
+
+                 <div class="from-group">
+                    <label for="{{ form.card_number.id_for_label}}">Enter card number</label>
+                    {{ form.card_number}}
+                </div>
+                <input type="submit" value="submit">
+            </fieldset>
+        </form>
+    </div>
+</div>
+</body>
+</html>
